@@ -1,0 +1,19 @@
+{
+  "name": "mdev1004-assignment2-express-api-crud",
+  "version": "1.0.0",
+  "description": "This is the assignemnt 2 with crud operation in nodejs express",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/puja110/MDEV1004-Assignment2-Express-API-CRUD.git"
+  },
+  "author": "Puja Shrestha",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/puja110/MDEV1004-Assignment2-Express-API-CRUD/issues"
+  },
+  "homepage": "https://github.com/puja110/MDEV1004-Assignment2-Express-API-CRUD#readme"
+}
