@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/puja110/MDEV1004-Assignment2-Express-API-CRUD/issues"
   },
-  "homepage": "https://github.com/puja110/MDEV1004-Assignment2-Express-API-CRUD#readme"
+  "homepage": "https://github.com/puja110/MDEV1004-Assignment2-Express-API-CRUD#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
 }
