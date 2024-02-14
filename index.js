@@ -10,12 +10,18 @@ var app = express();
 
 dotenv.config({ path: './config.env' });
 
+const InitiateMongoServer = require('./db');
+
+// initialize Mongodb connection
+InitiateMongoServer();
+
 // root route setup
 app.get('/', function(req, res) {
-    res.send("Welcome to the first express node js app");
+    res.send("Welcome to the assignment 2 - express api crud");
 });
 
 // create one port no on which app listen
-app.listen(3000, function() {
+const port = process.env.PORT || 4000;
+app.listen(port, function() {
     console.log("App is listening to port no 3000");
 });
