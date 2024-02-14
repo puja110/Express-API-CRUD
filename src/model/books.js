@@ -4,7 +4,7 @@ const Schema = mongoose.Schema;
 
 // defining the BooksSchema
 const BooksSchema = new Schema({
-    bookId: {type: String}, // defines the bookId field as a String type
+    id: {type: String}, // defines the bookId field as a String type
     bookName: {type: String}, // defines the bookName field as a String type
     isbn: {type: String}, // defines the isbn field as a String type
     rating: {type: Number}, // defines the rating field as a Number type
