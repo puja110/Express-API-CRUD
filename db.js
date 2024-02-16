@@ -25,7 +25,7 @@ const InitiateMongoServer = async () => {
     const count = await Book.countDocuments();
     if (count === 0) {
       // Insert initial Books data
-      await Book.insertMany(favBooks);
+      await Book.create(favBooks);
       console.log('Initial data inserted successfully');
     }
   } catch (e) {
