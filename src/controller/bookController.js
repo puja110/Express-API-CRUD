@@ -49,7 +49,7 @@ exports.addNewBook = async (req, res) => {
     // Create a new book instance
     const newBook = new Book({ booksName, isbn, rating, author, genre });
     const savedBook = await newBook.save();
-    res.status(201).json(savedBook);
+    res.status(201).json({ message: "Book added successfully!", savedBook: savedBook });
   } catch (error) {
     console.error(error);
     res.status(500).json({ error: 'Internal Server Error' });
@@ -74,7 +74,7 @@ exports.updateBook = async (req, res) => {
     if (!updatedBook) {
       return res.status(404).json({ message: 'Book not found' });
     }
-    res.json(updatedBook);
+    res.json({ message: "Book updated successfully!", updatedBook: updatedBook });
   } catch (error) {
     console.error(error);
     res.status(500).json({ error: 'Internal Server Error' });
@@ -94,7 +94,7 @@ exports.deleteBook = async (req, res) => {
     if (!deletedBook) {
       return res.status(404).json({ message: 'Book not found' });
     }
-    res.json(deletedBook);
+    res.json({ deleted: true, message: "Book deleted successfully!", deletedBook: deletedBook });
   } catch (error) {
     console.error(error);
     res.status(500).json({ error: 'Internal Server Error' });
