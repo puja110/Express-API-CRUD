@@ -44,10 +44,10 @@ exports.findBookById = async (req, res) => {
  */
 exports.addNewBook = async (req, res) => {
   try {
-    const { name, isbn, rating, author, genre } = req.body;
+    const { booksName, isbn, rating, author, genre } = req.body;
 
     // Create a new book instance
-    const newBook = new Book({ name, isbn, rating, author, genre });
+    const newBook = new Book({ booksName, isbn, rating, author, genre });
     const savedBook = await newBook.save();
     res.status(201).json(savedBook);
   } catch (error) {
@@ -65,10 +65,10 @@ exports.addNewBook = async (req, res) => {
 exports.updateBook = async (req, res) => {
   try {
     const { id } = req.params;
-    const { name, isbn, rating, author, genre } = req.body;
+    const { booksName, isbn, rating, author, genre } = req.body;
     const updatedBook = await Book.findByIdAndUpdate(
       id,
-      { name, isbn, rating, author, genre },
+      { booksName, isbn, rating, author, genre },
       { new: true }
     );
     if (!updatedBook) {
