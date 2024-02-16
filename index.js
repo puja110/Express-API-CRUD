@@ -23,6 +23,7 @@ const InitiateMongoServer = require('./db');
 InitiateMongoServer();
 
 app.use(cors());
+app.use(express.json());
 
 /**
  * @param {*} req

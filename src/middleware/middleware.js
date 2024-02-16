@@ -4,8 +4,9 @@
  * @param {*} next - The next middleware function to create book with all the information provided in the request body
  */
 const logCreateRequest = (req, res, next) => {
+  console.log(req.body);
   console.log(
-    `Creating a new book with title: ${req.body.name}, ISBN: ${req.body.isbn}, rating: ${req.body.rating}, author: ${req.body.author}, genre: ${req.body.genre}`
+    `Creating a new book with title: ${req.body.booksName}, ISBN: ${req.body.isbn}, rating: ${req.body.rating}, author: ${req.body.author}, genre: ${req.body.genre}`
   );
   next();
 };
@@ -27,7 +28,7 @@ const logReadRequest = (req, res, next) => {
  */
 const logUpdateRequest = (req, res, next) => {
   console.log(
-    `Updating book with ID: ${req.params.id}, new details: name: ${req.body.name}, ISBN: ${req.body.isbn}, rating: ${req.body.rating}, author: ${req.body.author}, genre: ${req.body.genre}`
+    `Updating book with ID: ${req.params.id}, new details: booksName: ${req.body.booksName}, ISBN: ${req.body.isbn}, rating: ${req.body.rating}, author: ${req.body.author}, genre: ${req.body.genre}`
   );
   next();
 };
