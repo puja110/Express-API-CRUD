@@ -10,7 +10,7 @@
 const express = require('express');
 const dotenv = require('dotenv');
 const cors = require('cors');
-const fs = require('fs');
+const bookRoutes = require('./src/routes/bookRoutes');
 
 // creating an instance of express
 var app = express();
@@ -22,6 +22,8 @@ const InitiateMongoServer = require('./db');
 // initialize Mongodb connection
 InitiateMongoServer();
 
+app.use(cors());
+
 /**
  * @param {*} req
  * @param {*} res
@@ -30,6 +32,8 @@ InitiateMongoServer();
 app.get('/', function (req, res) {
   res.send('Welcome to the Assignment 2 - Express Api - CRUD operations');
 });
+
+app.use('/books', bookRoutes);
 
 const port = process.env.PORT || 4000;
 app.listen(port, function () {

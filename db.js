@@ -2,7 +2,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const dotenv = require('dotenv');
 const Book = require('./src/model/books');
-const { books } = require('./src/data/favBookData');
+const { favBooks } = require('./src/data/favBookData');
 
 // loading environment variables from config file
 dotenv.config({ path: './config.env' });
@@ -25,7 +25,7 @@ const InitiateMongoServer = async () => {
     const count = await Book.countDocuments();
     if (count === 0) {
       // Insert initial Books data
-      await Book.insertMany(books);
+      await Book.insertMany(favBooks);
       console.log('Initial data inserted successfully');
     }
   } catch (e) {
