@@ -1,14 +1,13 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-// defining the BooksSchema
-const BooksSchema = new Schema({
-  id: { type: String },
-  name: { type: String },
-  isbn: { type: String },
-  rating: { type: Number },
-  author: { type: String },
-  genre: { type: String },
+// Define the Books schema
+const BooksSchema = new mongoose.Schema({
+  booksName: { type: String, required: true },
+  isbn: { type: String, required: true },
+  rating: { type: Number, required: true },
+  author: { type: String, required: true },
+  genre: { type: String, required: true },
 });
 
 // creating a Mongoose model named 'Books'
