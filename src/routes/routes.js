@@ -6,7 +6,7 @@ const middleware = require('../middleware/middleware.js');
 /**
  * @description Route to handle GET request for fetching all books
  */
-router.get('/books', middleware.logReadRequest, bookController.getAllBooks);
+router.get('/books', middleware.logReadRequest, bookController.listAllBooks);
 
 /**
  * @description Route to handle GET request for finding a book by ID
