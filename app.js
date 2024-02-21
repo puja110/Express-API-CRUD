@@ -8,21 +8,24 @@
 
 // importing dependencies
 const express = require('express');
-const dotenv = require('dotenv');
 const cors = require('cors');
 const bookRoutes = require('./src/routes/bookRoutes');
+const initiateDBConnection = require('./db');
 
-// creating an instance of express
-var app = express();
+// creating express instance
+const app = express();
 
-dotenv.config({ path: './config.env' });
+initiateDBConnection();
 
-const InitiateMongoServer = require('./db');
+// middlewares for enabling cors and for parsing JSON request bodies
+app.use(cors({
+  // origin: 'http://localhost:8081',
+  origin: 'https://mdev1004-express-api.onrender.com/',
+  methods: ['GET', 'POST', 'PATCH', 'DELETE'],
+  credentials: true
+}));
 
-// initialize Mongodb connection
-InitiateMongoServer();
-
-app.use(cors());
+// middleware for parsing JSON request bodies
 app.use(express.json());
 
 /**
@@ -30,13 +33,13 @@ app.use(express.json());
  * @param {*} res
  * @description Root route setup
  */
-app.get('/', function (req, res) {
-  res.send('Welcome to the Assignment 2 - Express Api - CRUD operations');
+app.get('/', (req, res) => {
+  res.send('Welcome to the Assignment 2 - Express Api - CRUD operations test');
 });
-
 app.use('/books', bookRoutes);
 
-const port = process.env.PORT || 4000;
-app.listen(port, function () {
-  console.log('App is listening to port no 4000');
+// Start the server
+const port = process.env.PORT;
+app.listen(port, async() => {
+  console.log(`Server is running on port ${port}`);
 });
