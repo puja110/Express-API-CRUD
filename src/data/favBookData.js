@@ -1,7 +1,7 @@
 exports.favBooks = [
   {
     booksName:
-      'Hello Puja Shrestha, ARe you there? The Age of AI: How Artificial Intelligence Is Transforming Everything',
+      'The Age of AI: How Artificial Intelligence Is Transforming Everything',
     isbn: '978-1-119-64277-4',
     rating: 4.5,
     author: 'Jason Thacker',

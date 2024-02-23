@@ -19,9 +19,8 @@ initiateDBConnection();
 
 // middlewares for enabling cors and for parsing JSON request bodies
 app.use(cors({
-  // origin: 'http://localhost:8081',
   origin: 'https://mdev1004-express-api.onrender.com/',
-  methods: ['GET', 'POST', 'PATCH', 'DELETE'],
+  methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE'],
   credentials: true
 }));
 

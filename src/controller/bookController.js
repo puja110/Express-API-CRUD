@@ -6,7 +6,7 @@ const Book = require('../model/books');
  * @param {*} res - The response object
  * @returns {JSON} - Returns all the saved books in the database
  */
-exports.listAllBooks = async (req, res) => {
+const listAllBooks = async (req, res) => {
   try {
     const books = await Book.find();
     res.json(books);
@@ -22,7 +22,7 @@ exports.listAllBooks = async (req, res) => {
  * @param {*} res - The response object
  * @returns {JSON} - Returns the book found by ID or 404 if not found
  */
-exports.findBookById = async (req, res) => {
+const findBookById = async (req, res) => {
   try {
     const { id } = req.params;
     const book = await Book.findById(id);
@@ -42,7 +42,7 @@ exports.findBookById = async (req, res) => {
  * @param {*} res - The response object
  * @returns {JSON} - Returns the newly created book
  */
-exports.addNewBook = async (req, res) => {
+const addNewBook = async (req, res) => {
   try {
     const { booksName, isbn, rating, author, genre } = req.body;
 
@@ -62,7 +62,7 @@ exports.addNewBook = async (req, res) => {
  * @param {*} res - The response object
  * @returns {JSON} - Returns the updated book or 404 if not found
  */
-exports.updateBook = async (req, res) => {
+const updateBook = async (req, res) => {
   try {
     const { id } = req.params;
     const { booksName, isbn, rating, author, genre } = req.body;
@@ -87,7 +87,7 @@ exports.updateBook = async (req, res) => {
  * @param {*} res - The response object
  * @returns {JSON} - Returns the deleted book or 404 if not found
  */
-exports.deleteBook = async (req, res) => {
+const deleteBook = async (req, res) => {
   try {
     const { id } = req.params;
     const deletedBook = await Book.findByIdAndDelete(id);
@@ -99,4 +99,13 @@ exports.deleteBook = async (req, res) => {
     console.error(error);
     res.status(500).json({ error: 'Internal Server Error' });
   }
+};
+
+
+module.exports = {
+  listAllBooks,
+  findBookById,
+  addNewBook,
+  updateBook,
+  deleteBook,
 };
