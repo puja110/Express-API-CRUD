@@ -101,7 +101,6 @@ const deleteBook = async (req, res) => {
   }
 };
 
-
 module.exports = {
   listAllBooks,
   findBookById,

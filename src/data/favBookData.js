@@ -8,7 +8,7 @@ exports.favBooks = [
     genre: 'Technology',
   },
   {
-    booksName: 'The Algorithm: How AI Decides What We See, Think, and Do',
+    booksName: 'Test here The Algorithm: How AI Decides What We See, Think, and Do',
     isbn: '978-0-241-45567-9',
     rating: 4.2,
     author: 'Timandra Harkness',
