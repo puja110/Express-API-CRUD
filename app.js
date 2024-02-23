@@ -3,7 +3,7 @@
  * Student Name / Student ID:
  * Puja Shrestha, 200573293
  * Suyog Shrestha, 200565523
- * Date: Feb 14th, 2024
+ * Date: Feb 23, 2024
  */
 
 // importing dependencies
@@ -17,7 +17,7 @@ const app = express();
 
 initiateDBConnection();
 
-// middlewares for enabling cors and for parsing JSON request bodies
+// middlewares for enabling cors
 app.use(cors({
   origin: 'https://mdev1004-express-api.onrender.com/',
   methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE'],
